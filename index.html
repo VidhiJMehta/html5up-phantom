@@ -13,15 +13,18 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type='text/javascript'></script>
 		<script type='text/javascript'>
-			let text = document.getElementById("test");
-			$(document).ready(function(){
-    		function setRandomWord(){
-        		var phrases =new Array("Reality TV Junkie ","Baker ","Crocheter ", "Hiker ", "Dog Lover ", "Foodie "); 
-				var colors = new Array('#db4437', '#0f9d58', 'Orange', '#4285f4', '#f4b400', '#5433FF');
-				var rand = Math.floor(Math.random()*phrases.length);
-        		$("#hobby").text(phrases[rand]);
-				$("#hobby").css('color', colors[rand]);
-    		}setInterval(setRandomWord,1500);	});
+			function setRandomWord(){
+				let hobby = document.getElementById("hobby");
+				const phrases = ["Reality TV Junkie ","Baker ","Crocheter ", "Hiker ", "Dog Lover ", "Foodie "]; 
+				const colors = ['#db4437', '#0f9d58', 'Orange', '#4285f4', '#f4b400', '#5433FF'];
+				console.log(hobby.dataset.counter);
+				hobby.textContent = phrases[hobby.dataset.counter];
+				hobby.style.color = colors[hobby.dataset.counter];
+				hobby.dataset.counter = (Number(hobby.dataset.counter) + 1) % 6;
+    		}
+			document.addEventListener("DOMContentLoaded", () => {
+				window.setInterval(setRandomWord, 1500);
+    		});
 		</script>
 	</head>
 	<body class="is-preload">
@@ -62,7 +65,7 @@
 						<div class="inner">
 							<header>
 								<h1 >Hey, my name is Vidhi<br />
-								I am a Software Developer and <span id="hobby" style="color:#0f9d58" > Baker </span>.</h1>
+								I am a Software Developer and <span id="hobby" data-counter="0"> Baker </span>.</h1>
 								<h3><a href="mailto: vidhimehta0524@gmail.com" >Email </a>/ <a href="https://www.linkedin.com/in/vidhijmehta/" target="_blank" >LinkedIn </a>/ <a href="./assets/Vidhi_Mehta_Resume.pdf" target="_blank">Resume</a></h3>
 							</header>
 							<hr id="aboutMeBreak">
