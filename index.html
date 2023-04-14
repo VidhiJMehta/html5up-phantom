@@ -5,133 +5,199 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Vidhi Mehta Personal Website</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type='text/javascript'></script>
-		<script type='text/javascript'>
-			function setRandomWord(){
-				let hobby = document.getElementById("hobby");
-				const phrases = ["Reality TV Junkie ","Baker ","Crocheter ", "Hiker ", "Dog Lover ", "Foodie "]; 
-				const colors = ['#db4437', '#0f9d58', 'Orange', '#4285f4', '#f4b400', '#5433FF'];
-				console.log(hobby.dataset.counter);
-				hobby.textContent = phrases[hobby.dataset.counter];
-				hobby.style.color = colors[hobby.dataset.counter];
-				hobby.dataset.counter = (Number(hobby.dataset.counter) + 1) % 6;
-    		}
-			document.addEventListener("DOMContentLoaded", () => {
-				window.setInterval(setRandomWord, 1500);
-    		});
-		</script>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/Component 1.png" alt="" /></span>
-								</a>
+<head>
+	<title>Vidhi Mehta Personal Website</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="index.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type='text/javascript'></script>
+	<script type='text/javascript'>
+		function setRandomWord() {
+			let hobby = document.getElementById("hobby");
+			const phrases = ["Reality TV Junkie ", "Baker ", "Crocheter ", "Hiker ", "Dog Lover ", "Foodie "];
+			const colors = ['#db4437', '#0f9d58', 'Orange', '#4285f4', '#f4b400', '#5433FF'];
+			console.log(hobby.dataset.counter);
+			hobby.textContent = phrases[hobby.dataset.counter];
+			hobby.style.color = colors[hobby.dataset.counter];
+			hobby.dataset.counter = (Number(hobby.dataset.counter) + 1) % 6;
+		}
+		document.addEventListener("DOMContentLoaded", () => {
+			window.setInterval(setRandomWord, 1500);
+		});
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+		function showProject(projectId) {
+			// Get the project information based on the projectId
+			var projectInfo = getProjectInfo(projectId);
 
-						</div>
-					</header>
+			// Update the project-info div with the project information
+			var projectInfoDiv = document.getElementById("project-info");
+			projectInfoDiv.innerHTML = projectInfo;
+		}
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#aboutMeBreak">About</a></li>
-							<li><a href="#projects">Projects</a></li>
-							<li><a href="#contacts">Contacts</a></li>
-						</ul>
-					</nav>
+		function getProjectInfo(projectId) {
+			// This function should return the project information based on the projectId
+			// You can use a switch statement or an if/else statement to determine the project information to return
+			// For this example, we will just return a dummy string
+			switch (projectId) {
+				case 1:
+					return "Project 1 Information";
+				case 2:
+					return "Project 2 Information";
+				case 3:
+					return "Project 3 Information";
+				default:
+					return "";
+			}
+		}
+	</script>
+	
+</head>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header>
-								<h1 >Hey, my name is Vidhi<br />
-								I am a Software Developer and <span id="hobby" data-counter="0"> Baker </span>.</h1>
-								<h3><a href="mailto: vidhimehta0524@gmail.com" >Email </a>/ <a href="https://www.linkedin.com/in/vidhijmehta/" target="_blank" >LinkedIn </a>/ <a href="./assets/Vidhi_Mehta_Resume.pdf" target="_blank">Resume</a></h3>
-							</header>
-							<hr id="aboutMeBreak">
-							<section class="aboutMe" id="aboutMe"> 
-								<div>
-									<h1>About Me </h1>
-									<p> I am a Masters student at the <em> University of Texas at Dallas </em>, specializing in Intelligent Systems. 
-										I have experience in backend development, cloud computing, and app/web development.
-										Some of my interests are investing, crocheting, painting. </p>
-								</div>
-								<div>
-									<article class="style1">
-										<span class="image">
-											<img src="images/profile2.jpeg" alt="" class="myPic"/>
-										</span>
-									</article>
-									
-								</div>
-							</section>
-							<hr>
-							<section id="projects">
-								<h1> Projects </h1>
-								
-								<section class="tiles">
-									<article class="style1">
-										<span class="image">
-											<img src="images/pic01.jpg" alt="" />
-										</span>
-										<a href="generic.html">
-											<h2>Software Dev</h2>
-											<div class="content">
-												<p>Fullstack software projects using technologies such as React, Java, SQL, Node, etc</p>
-											</div>
-										</a>
-									</article>
-									<article class="style2">
-										<span class="image">
-											<img src="images/pic02.jpg" alt="" />
-										</span>
-										<a href="generic.html">
-											<h2>Data Science</h2>
-											<div class="content">
-												<p>Data Science projects using Python, Tensorflow, PySpark, Kafka, Kibana, etc</p>
-											</div>
-										</a>
-									</article>
-									<article class="style3">
-										<span class="image">
-											<img src="images/pic03.jpg" alt="" />
-										</span>
-										<a href="generic.html">
-											<h2>UX/UI</h2>
-											<div class="content">
-												<p>Design projects using Figma, Adobe XD, high and low fidelity prototyping</p>
-											</div>
-										</a>
-									</article>
-								</section>
-							</section>
-						</div>
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<!-- Logo -->
+				<a href="index.html" class="logo">
+					<span class="symbol"><img src="images/Component 1.png" alt="" /></span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#aboutMeBreak">About</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<header>
+					<h1>Hey, my name is Vidhi<br />
+						I am a Software Developer and <span id="hobby" data-counter="0"> Baker </span>.</h1>
+					<h3><a href="mailto: vidhimehta0524@gmail.com">Email </a>/ <a
+							href="https://www.linkedin.com/in/vidhijmehta/" target="_blank">LinkedIn </a>/ <a
+							href="./assets/Vidhi_Mehta_Resume.pdf" target="_blank">Resume</a></h3>
+				</header>
+				<hr id="aboutMeBreak">
+				<section class="aboutMe" id="aboutMe">
+					<div style="flex: 2">
+						<h1>About Me </h1>
+						<p> I am a Masters student at the <em> University of Texas at Dallas </em>, specializing in
+							Intelligent Systems.
+							I have experience in backend development, cloud computing, and app/web development.
+							Some of my interests are investing, crocheting, painting. </p>
 					</div>
+					<div style="flex: 1">
+						<img src="images/profile2.jpeg" alt="" class="myPic" />
+					</div>
+				</section>
+				<hr>
+				<section id="projects">
+					<h1>Projects</h1>
+					<div class="legend">
+						<span class="legend-item software">Software Development</span>
+						<span class="legend-item data-science">Data Science</span>
+						<span class="legend-item ux">User Experience</span>
+					  </div>
+					<div class="projects-list">
+						<a href="https://devpost.com/software/glaucoma-insights" target="_blank" class="project-card">
+						  <h3 class="project-title-DA">OptiRisk</h3>
+						  <p class="project-description">
+							Automated community health screening system to classify
+							glaucoma cases from fundus images, prioritizing 
+							low confidence classifications for healthcare 
+							professionals to review.</p>
+							<p class="technologies-used-DA">Python, Pandas, Numpy, SciKit, Streamlit</p>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<!-- <section>
+						</a>
+						<a href="https://devpost.com/software/get-them-greens" target="_blank" class="project-card">
+						  <h3 class="project-title-SD">Get Them Greens</h3>
+						  <p class="project-description">
+							Simplifies the process of finding the best plants 
+							to grow for the individual's needs and takes into 
+							account experience with gardening, length of time 
+							willing to dedicate to growing produce, space available 
+							and even the option to pick plants specific to certain seasons</p>
+							<p class="technologies-used-SD">Python, Streamlit, Google Maps API</p>
+						</a>
+						<a href="https://devpost.com/software/vested-interest-czw1j5"  target="_blank" class="project-card">
+						  <h3 class="project-title-SD">Vested Interest</h3>
+						  <p class="project-description">
+							A tool that makes it easy to specify what issues a user
+							is passionate about, and to get back a list of recommended 
+							stocks that agree with their values</p>
+							<p class="technologies-used-SD">React, Flask, Finnhub API, Figma</p>
+
+						</a>
+						<a href="https://devpost.com/software/skincare-recommendation-system" target="_blank" class="project-card">
+						  <h3 class="project-title-SD">Skincare Recommendation System</h3>
+						  <p class="project-description">
+							This project uses s(CASP) to take user-inputted 
+							skincare profiles and generate a conflict-free 
+							list of recommended products based on skin type, 
+							primary concerns, and sensitivity levels. </p>
+							<p class="technologies-used-SD">sCASP, Prolog</p>
+						</a>
+						<a href="#projects" class="project-card">
+							<h3 class="project-title-SD">Twitter Real-Time Sentiment Analysis</h3>
+							<p class="project-description">
+								Leveraged the Twitter API to capture real-time 
+								tweets and visualize their sentiment using Kibana dashboards. 
+								Utilized Kafka to produce and consume streams of tweets and
+								conduct real-time sentiment analysis.
+							</p>
+							  <p class="technologies-used-SD">PySpark, Kafka, Kibana</p>
+						  </a>
+						  <a href="https://colab.research.google.com/drive/1WUWnzW_GwS_RPCPei9yshAKEBgxTCAq1" target="_blank" class="project-card">
+							<h3 class="project-title-DA">Titanic - Machine Learning from Disaster </h3>
+							<p class="project-description">
+								Used machine learning to create a model that 
+								predicts which passengers survived the Titanic shipwreck.
+								Focused on feature selection, exploratory data analysis, and using logistic regression
+							</p>
+							  <p class="technologies-used-DA">Python, Numpy, Matplotlib, Sci-Kit Learn</p>
+						  </a>
+						  <a href="https://www.figma.com/proto/DjU0wAyUWT1t7fnXuTHLCv/Tip-Mobile-Ui-Design-(Vidhi's-Copy)?node-id=243-168&scaling=scale-down&page-id=0%3A1&starting-point-node-id=243%3A168" target="_blank" class="project-card">
+							<h3 class="project-title-UX">HiFive Tipper Flow Design </h3>
+							<p class="project-description">
+								Created a hi-fidelity prototype for the tipper flow
+								where the user can select the employees they want to tip and specify the amount
+							</p>
+							  <p class="technologies-used-UX">Figma</p>
+						  </a>
+					  </div>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<!-- <section>
 								<h2>Get in touch</h2>
 								<form method="post" action="#">
 									<div class="fields">
@@ -150,29 +216,35 @@
 									</ul>
 								</form>
 							</section> -->
-							<section id="contacts">
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="https://github.com/vidhijmehta" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://linkedin.com/in/vidhijmehta" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="tel:+14695007520" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="mailto:  vidhimehta0524@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; All rights reserved</li><li>Design: Vidhi Mehta & HTML5 UP </li>
-							</ul>
-						</div>
-					</footer>
-
+				<section id="contacts">
+					<h2>Follow</h2>
+					<ul class="icons">
+						<li><a href="https://github.com/vidhijmehta" class="icon brands style2 fa-github"><span
+									class="label">GitHub</span></a></li>
+						<li><a href="https://linkedin.com/in/vidhijmehta" class="icon brands style2 fa-linkedin"><span
+									class="label">LinkedIn</span></a></li>
+						<li><a href="tel:+14695007520" class="icon solid style2 fa-phone"><span
+									class="label">Phone</span></a></li>
+						<li><a href="mailto:  vidhimehta0524@gmail.com" class="icon solid style2 fa-envelope"><span
+									class="label">Email</span></a></li>
+					</ul>
+				</section>
+				<ul class="copyright">
+					<li>&copy; All rights reserved</li>
+					<li>Design: Vidhi Mehta & HTML5 UP </li>
+				</ul>
 			</div>
+		</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	</div>
 
-	</body>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
